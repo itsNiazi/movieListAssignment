@@ -8,14 +8,17 @@ export default function AddMovies(props) {
 
   function handleSubmission() {
     const movieTitle = movieRef.current.value.trim();
-    const movieRating = ratingRef.current.value.trim();
+    const movieRating = ratingRef.current.value;
     if (movieTitle && movieRating) {
       props.onSubmission({
         id: newId,
         movie: movieRef.current.value,
         rating: ratingRef.current.value,
       });
+    } else {
+      alert("Var vänlig och ange både titel och betyg!");
     }
+
     movieRef.current.value = "";
     ratingRef.current.value = "";
   }

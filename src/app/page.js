@@ -10,7 +10,6 @@ export default function Home() {
 
   function handleMovie(movie) {
     setMovies([...movies, movie]);
-    console.log(movies);
   }
   function deleteMovie(indexToRemove) {
     const updatedMovieList = [...movies];

@@ -1,3 +1,3 @@
 export default function OrderByGradeButton(props) {
-  return <button onClick={props.sortMovies}>Sort by Grade</button>;
+  return <button onClick={props.sortMovies}>Sortera efter betyg</button>;
 }
