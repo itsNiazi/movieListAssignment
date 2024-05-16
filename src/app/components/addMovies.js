@@ -9,25 +9,26 @@ export default function AddMovies(props) {
   function handleSubmission() {
     const movieTitle = movieRef.current.value.trim();
     const movieRating = ratingRef.current.value;
-    if (movieTitle && movieRating) {
+    if (movieTitle && movieRating != false) {
       props.onSubmission({
         id: newId,
         movie: movieRef.current.value,
         rating: ratingRef.current.value,
       });
+      movieRef.current.value = "";
+      ratingRef.current.value = ratingRef.current[0].value;
     } else {
       alert("Var vänlig och ange både titel och betyg!");
     }
-
-    movieRef.current.value = "";
-    ratingRef.current.value = "";
   }
 
   return (
     <div>
       <input type="text" placeholder="Ange film..." ref={movieRef} />
       <select ref={ratingRef}>
-        <option value="0">Ange betyg</option>
+        <option value="0" defaultValue>
+          Ange betyg
+        </option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

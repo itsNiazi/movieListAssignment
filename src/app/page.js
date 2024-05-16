@@ -11,6 +11,7 @@ export default function Home() {
   function handleMovie(movie) {
     setMovies([...movies, movie]);
   }
+
   function deleteMovie(indexToRemove) {
     const updatedMovieList = [...movies];
     updatedMovieList.splice(indexToRemove, 1);
@@ -19,7 +20,7 @@ export default function Home() {
   function sortByAlpha() {
     const sortedList = [...movies];
     sortedList.sort((a, b) => {
-      return a.movie > b.movie;
+      return a.movie.trim() > b.movie.trim();
     });
     setMovies(sortedList);
   }
